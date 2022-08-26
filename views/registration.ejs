@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/stylesheets/registration.css">
+    <title>Cadastrar Pontos de Adoção</title>
+</head>
+
+<body>
+    <div class="linksContainer">
+        <a href="/">Início</a>
+        <a href="/pontosdeadocao">Pontos de adoção</a>
+    </div>
+
+    <main>
+        <h3>Cadastre um ponto de adoção</h3>
+        <form action="/cadastro" method="post">
+            <div class="inputContainer title">
+                <label for="title">Título *</label>
+                <input type="text" class="reqElements firstWord" name="title" placeholder="Feira de adoção anual"
+                    required>
+            </div>
+            <div class="inputContainer organizer">
+                <label for="organizer">Organizador *</label>
+                <input type="text" class="reqElements firstWord" name="organizer" placeholder="Ong Amigos dos Animais"
+                    required>
+            </div>
+            <div class="inputContainer description">
+                <label for="description">Descrição *</label>
+                <input type="text" class="reqElements firstWord" name="description" placeholder="Adoção de Gatos"
+                    required>
+            </div>
+            <p>Endereço</p>
+            <div class="inputContainer street">
+                <label for="street">Logradouro *</label>
+                <input type="text" class="reqElements multWord" name="street" placeholder="Rua dos Operários" required>
+            </div>
+            <div class="inputContainer localNumber">
+                <label for="localNumber">Número *</label>
+                <input type="number" class="reqElements" name="localNumber" placeholder="123" required>
+            </div>
+            <div class="inputContainer complement">
+                <label for="complement">Complemento</label>
+                <input type="text" class="firstWord" name="complement" placeholder="Em frente à prefeitura">
+            </div>
+            <div class="inputContainer district">
+                <label for="district">Bairro *</label>
+                <input type="text" class="reqElements multWord" name="district" placeholder="Santa Clara" required>
+            </div>
+            <div class="inputContainer city">
+                <label for="city">Município *</label>
+                <input type="text" class="reqElements multWord" name="city" placeholder="Santa Cruz da serra" required>
+            </div>
+            <div class="inputContainer state">
+                <label for="state">Estado *</label>
+                <select class="reqElements" name="state" required>
+                    <option value=""></option>
+                    <option value="Acre">Acre</option>
+                    <option value="Alagoas">Alagoas</option>
+                    <option value="Amapá">Amapá</option>
+                    <option value="Amazonas">Amazonas</option>
+                    <option value="Bahia">Bahia</option>
+                    <option value="Ceará">Ceará</option>
+                    <option value="Distrito Federal">Distrito Federal</option>
+                    <option value="Espírito Santo">Espírito Santo</option>
+                    <option value="Goiás">Goiás</option>
+                    <option value="Maranhão">Maranhão</option>
+                    <option value="Mato Grosso">Mato Grosso</option>
+                    <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                    <option value="Minas Gerais">Minas Gerais</option>
+                    <option value="Pará">Pará</option>
+                    <option value="Paraíba">Paraíba</option>
+                    <option value="Paraná">Paraná</option>
+                    <option value="Pernambuco">Pernambuco</option>
+                    <option value="Piauí">Piauí</option>
+                    <option value="Rio de Janeiro">Rio de Janeiro</option>
+                    <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                    <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                    <option value="Rondônia">Rondônia</option>
+                    <option value="Roraima">Roraima</option>
+                    <option value="Santa Catarina">Santa Catarina</option>
+                    <option value="São Paulo">São Paulo</option>
+                    <option value="Sergipe">Sergipe</option>
+                    <option value="Tocantins">Tocantins</option>
+                </select>
+            </div>
+            <div class="inputContainer day" required>
+                <label for="day">Dia *</label>
+                <input type="date" class="reqElements date" name="day">
+            </div>
+            <div class="inputContainer hour" required>
+                <label for="hour">Hora *</label>
+                <input type="time" class="reqElements" name="hour" placeholder="15:00">
+            </div>
+
+            <input type="submit" class="submitBtn" disabled value="Cadastrar">
+        </form>
+    </main>
+
+    <div class="modal">
+        Cadastrado!
+    </div>
+</body>
+<script src="../scripts/registration.js"></script>
+
+</html>

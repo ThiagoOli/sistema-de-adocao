@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/efcb26e1c4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/points.css">
+    <title>Localizar Pontos de Adoção</title>
+</head>
+
+<body>
+    <header>
+        <div class="linksContainer">
+            <a href="/">Início</a>
+            <a href="/cadastro">Cadastrar Pontos</a>
+        </div>
+        <div class="inputContainer">
+            <h2>Encontre pontos de adoção na sua cidade</h2>
+
+            <form action="/pontosDeAdocao" method="get" class="searchForm">
+                <input type="text" name="query" class="queryInput" placeholder="Ex: Rio de Janeiro" />
+                <button type="submit" class="submitBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <div class="cardsContainer">
+            <% points.forEach(point=> { %>
+                <div class="card">
+                    <div class="title">
+                        <h3>
+                            <%= point.title %>
+                        </h3>
+                    </div>
+                    <div class="info">
+                        <p>
+                            Organizador: <%= point.organizer %>
+                        </p>
+                        <p>
+                            Descrição: <%= point.description %>
+                        </p>
+                        <div class="streetContainer">
+                            <p>
+                                <%= point.address.street %>
+                            </p>
+                            <p>
+                                N:<%= point.address.localNumber %>
+                            </p>
+                        </div>
+                        <p>
+                            <%= point.address.complement %>
+                        </p>
+                        <p>
+                            Bairro: <%= point.address.district %>
+                        </p>
+                        <div class="cityStateContainer">
+                            <p>
+                                Município: <%= point.address.city %>
+                            </p>
+                            <p>
+                                <%= point.address.state %>
+                            </p>
+                        </div>
+                        <div class="date">
+                            <p id="date">
+                                Dia: <%= point.day %>
+                            </p>
+                            <p>
+                                Hora: <%= point.hour %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+
+        </div>
+    </main>
+    <script src="/scripts/points.js"></script>
+</body>
+
+</html>

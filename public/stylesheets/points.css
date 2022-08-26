@@ -1,0 +1,262 @@
+@import url("/fonts/Ubuntu-Light.ttf");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu";
+    color: #343453;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f8f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* links */
+
+header {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 5px #343453;
+}
+
+.linksContainer {
+    width: 40%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.linksContainer a {
+    width: calc(80% / 2);
+    height: 60%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 7px;
+
+    color: #f8f9f9;
+    background: linear-gradient(to right, #43cacd, #94abd0);
+    transition: 500ms;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linksContainer a:hover {
+    color: #343453;
+}
+
+
+/* subtítulo e input de pesquisa */
+.inputContainer {
+    width: 100%;
+    height: 50%;
+    padding: 0 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputContainer h2 {
+    color: #343453;
+    font-size: 1.4rem;
+}
+
+
+.searchForm {
+    width: 20%;
+    height: 50%;
+    border-bottom: solid 2px #343453;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.queryInput {
+    display: flex;
+    height: 100%;
+    width: 70%;
+    margin-left: 5%;
+    font-size: 1.1rem;
+    background-color: #0000;
+    color: #343453;
+    outline: none;
+    border: none;
+}
+
+.submitBtn {
+    height: 100%;
+    width: 20%;
+    font-size: 1.1rem;
+    color: #343453;
+    background-color: #0000;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+main {
+    width: 100%;
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* cards com os pontos de adoção */
+.cardsContainer {
+    width: 100%;
+    height: 90%;
+    padding-top: 1%;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow: auto;
+}
+
+/* card de pontos */
+.card {
+    width: calc(96% / 3);
+    height: 50%;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #343453;
+
+    margin-bottom: 1%;
+    margin-left: 1%;
+}
+
+.title {
+    width: 96%;
+    height: 15%;
+    border-bottom: 2px solid #343453;
+
+    display: flex;
+    align-items: flex-end;
+    margin: 0 2%;
+}
+
+.info {
+    height: 80%;
+    width: 96%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 2%;
+    padding-top: 2%;
+}
+
+.info p {
+    font-size: 1.1rem;
+}
+
+.streetContainer,
+.cityStateContainer {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    justify-content: space-between;
+}
+
+.date {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.date p {
+    margin-right: 5%;
+}
+
+/* smartphones e iphones */
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    header {
+        height: 20%;
+        justify-content: space-around;
+    }
+    
+    .linksContainer {
+        width: 90%;
+        height: 50%;
+    }
+
+    .linksContainer a {
+        width: calc(90% / 2);
+        height: 60%;
+        font-size: 1rem;
+    }
+
+    .inputContainer {
+        height: 40%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .inputContainer h2 {
+        font-size: 1rem;
+    }
+
+    .searchForm {
+        width: 80%;
+    }
+
+    .cardsContainer {
+        padding-top: 2%;
+        align-items: center;
+        justify-content: center;
+        overflow: auto;
+    }
+
+    .card {
+        width: 95%;
+        height: 50%;
+    }
+
+}
+
+@media (min-height: 200px) and (max-height: 570px) {
+    body {
+        height: var(--bodyHeight);
+    }
+}
+
+/* tablets e ipads */
+
+@media (min-width: 490px) and (max-width: 900px) {
+    
+    .linksContainer {
+        width: 80%;
+    }
+
+    .inputContainer {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .searchForm {
+        width: 70%;
+    }
+
+    .card {
+        width: calc(97% / 2);
+        height: 40%;
+    }
+}

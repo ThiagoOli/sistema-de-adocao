@@ -1,0 +1,125 @@
+@import url("/fonts/Ubuntu-Light.ttf");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu";
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f8f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    height: 70%;
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main p {
+    font-size: 3rem;
+    color: #343453;
+    text-align: justify;
+    margin: 0 5%;
+    line-height: 1.3;
+}
+
+.main img {
+    width: 45%;
+}
+
+.linksContainer {
+    height: 20%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.linksContainer a {
+    width: calc(80% / 2);
+    height: 40%;
+    border-radius: 7px;
+
+    text-decoration: none;
+    font-size: 1.3rem;
+
+    color: #f8f9f9;
+    background: linear-gradient(to right, #43cacd, #94abd0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 500ms;
+}
+
+.linksContainer a:hover {
+    color: #343453;
+    background: linear-gradient(to right, #94abd0, #43cacd, #94abd0);
+}
+
+/* smartphones e iphones */
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .main {
+        height: 60%;
+        padding: 0;
+
+        flex-direction: column-reverse;
+        justify-content: space-around;
+    }
+
+    .main img {
+        width: 70%;
+    }
+
+    .main p {
+        font-size: 1.4rem;
+    }
+
+    .linksContainer {
+        width: 90%;
+        height: 10%;
+    }
+
+    .linksContainer a {
+        width: 45%;
+        height: 50%;
+        font-size: 1rem;
+    }
+
+}
+
+/* tablets e ipads */
+
+@media (min-width: 490px) and (max-width: 900px) {
+
+    .main {
+        flex-direction: column-reverse;
+        justify-content: space-around;
+    }
+
+    .main img {
+        width: 70%;
+    }
+
+    .main p {
+        font-size: 2rem
+    }
+
+    .linksContainer {
+        width: 70%;
+        height: 15%;
+    }
+    
+}
