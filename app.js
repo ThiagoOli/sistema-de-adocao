@@ -3,6 +3,7 @@ const app = express()
 const mongoose = require("mongoose")
 const Routes = require("./routes")
 const ejs = require("ejs")
+const cron = require("node-cron")
 
 const dataControl = require("./DB/dataControl")
 
@@ -16,7 +17,9 @@ app.use(express.static(__dirname + "/public"))
 
 app.use(Routes)
 
-dataControl()
+cron.schedule("0 0 1 * * *", () => {
+    dataControl()
+})
 
 mongoose.connect("mongodb://localhost:27017/pontosDeAdocao")
 .then(() => {
